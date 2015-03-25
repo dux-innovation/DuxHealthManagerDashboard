@@ -21,8 +21,8 @@ sap.ui.jsview("view.launchpad", {
 	createContent : function(oController) {
 
 		var page =  new sap.m.Page({
-			title : "Menu do Paciente",
-			showNavButton: true,
+			title : "{i18n>Tile_Main_Application}",
+			showNavButton: false,
 			backgroundDesign: sap.m.PageBackgroundDesign.Standard, 			
 
 			content : [
@@ -32,26 +32,64 @@ sap.ui.jsview("view.launchpad", {
 				width: "100%",
 				allowAdd: true,
 				tiles : [
-
-					new sap.m.StandardTile("tile_consultation", {
-						title : "{i18n>Tile_Title_Consultation}",
-						icon: "sap-icon://activity-individual",
+				         
+					new sap.m.StandardTile("tile_predictive", {
+						title : "{i18n>Tile_Title_Predictive_Analysis}",
+						icon: "sap-icon://future",
 						iconDensityAware: false,
 						removable: false,
 						press: function(){
-							window.location.assign("../DuxHealthPrescriptionApp");
+							window.location.assign("../DuxHealthManagerPredictiveMain");
 						}
 					}),
 
-					new sap.m.StandardTile("tile_examination", {
-						title : "{i18n>Tile_Title_Examination}",
-						icon: "sap-icon://stethoscope",
+					new sap.m.StandardTile("tile_consultation", {
+						title : "{i18n>Tile_Title_Consultation_Reports}",
+						icon: "sap-icon://clinical-order",
+						iconDensityAware: false,
+						removable: false,
+						press: function(){
+							//window.location.assign("../DuxHealthPrescriptionApp");
+						}
+					}),
+
+					new sap.m.StandardTile("tile_region", {
+						title : "{i18n>Tile_Title_Region_Reports}",
+						icon: "sap-icon://world",
 						removable : false,
 						press: function(){
-							window.location.assign("../DuxHealthExaminationApp");
+							//window.location.assign("../DuxHealthExaminationApp");
+						}
+					}),
+					
+					new sap.m.StandardTile("tile_medicine", {
+						title : "{i18n>Tile_Title_Medicine_Reports}",
+						icon: "sap-icon://pharmacy",
+						removable : false,
+						press: function(){
+							//window.location.assign("../DuxHealthExaminationApp");
+						}
+					}),
+					
+					new sap.m.StandardTile("tile_employee", {
+						title : "{i18n>Tile_Title_Employee}",
+						icon: "sap-icon://work-history",
+						removable : false,
+						press: function(){
+							//window.location.assign("../DuxHealthExaminationApp");
+						}
+					}),
+					
+					
+					new sap.m.StandardTile("tile_complain", {
+						title : "{i18n>Tile_Title_Complain_Reports}",
+						icon: "sap-icon://notification-2",
+						removable : false,
+						press: function(){
+							//window.location.assign("../DuxHealthExaminationApp");
 						}
 					})
-
+					
 				]
 
 			})
